@@ -13,9 +13,9 @@ public extension WWTextRasterizer {
     /// 句子整體被畫出來之後的黑白畫素圖 (亮 / 暗)
     struct BitMatrix: Equatable {
         
-        let width: Int
-        let height: Int
-        var pixels: [Bool] { storage }
+        public let width: Int
+        public let height: Int
+        public var pixels: [Bool] { storage }
         
         private let storage: [Bool]
         
@@ -36,9 +36,9 @@ public extension WWTextRasterizer {
     /// 記錄單字切片訊息 => "歡" (45..<67)
     struct GlyphSlice: Equatable {
         
-        let characterIndex: Int
-        let character: Character
-        let columnRange: Range<Int>
+        public let characterIndex: Int
+        public let character: Character
+        public let columnRange: Range<Int>
     }
     
     /// 記錄句子總切片訊息
