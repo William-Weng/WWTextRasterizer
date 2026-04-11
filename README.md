@@ -5,6 +5,8 @@
 - A lightweight Swift tool that converts text into a bitmap (BitMatrix) on iOS, suitable for use cases such as LED displays, small screens, font rasterization, custom font rendering, and dot-matrix type layouts.
 - 一個幫你在 iOS 上把文字轉成「點陣圖」（BitMatrix）的 Swift 小工具，適合用在LED、小型顯示器、字型光柵化、自訂字型渲染、點陣字之類的場景。
 
+https://github.com/user-attachments/assets/0cb0ed99-1c93-4756-97ec-ffd42d3959d0
+
 ### [Installation with Swift Package Manager](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
 
 ```bash

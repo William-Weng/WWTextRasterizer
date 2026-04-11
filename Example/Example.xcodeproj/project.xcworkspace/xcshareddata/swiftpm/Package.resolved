@@ -1,0 +1,15 @@
+{
+  "originHash" : "e4f3495602f69323de8e95da3dde3bbd918055213063569831aae30fec0927be",
+  "pins" : [
+    {
+      "identity" : "wwtextrasterizer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWTextRasterizer",
+      "state" : {
+        "revision" : "abc71215c0964de7e8955f7a3b6687aa0a0fe5bf",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
