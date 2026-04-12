@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWTextRasterizer",
       "state" : {
-        "revision" : "ded9afbe5bd7afcbc0402eff97a174f2a7dd0fcb",
-        "version" : "1.0.1"
+        "revision" : "83657daeb5de5dcf95b521bd8e236019636a451e",
+        "version" : "1.1.0"
       }
     }
   ],

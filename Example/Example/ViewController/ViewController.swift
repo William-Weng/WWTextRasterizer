@@ -10,14 +10,18 @@ import WWTextRasterizer
 
 final class ViewController: UIViewController {
     
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var ledImageView: UIImageView!
     
-    @IBAction func display(_ sender: UIBarButtonItem) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        displayLED()
+    }
+    
+    func displayLED() {
         
         let config = WWTextRasterizer.Configuration(
-            font: UIFont.systemFont(ofSize: 24),
-            targetHeight: 40,
+            font: .systemFont(ofSize: 24),
+            targetHeight: 64,
             threshold: 110,
             horizontalPadding: 5,
             trimHorizontalEmptySpace: true,
@@ -25,10 +29,9 @@ final class ViewController: UIViewController {
         )
         
         let rasterizer = WWTextRasterizer(config: config)
-        let text = textField.text ?? ""
+        let text = "Hello !!!"
         let result = rasterizer.convert(text)
         
-        let image = result.matrix.toImage(scale: 4)
-        imageView.image = image
+        ledImageView.image = result.matrix.toLEDImage()
     }
 }
