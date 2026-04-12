@@ -23,6 +23,7 @@ dependencies: [
 |toLEDImage(ledOnColor:ledOffColor:backgroundColor:dotSize:dotSpacing:useRoundDots:glowOpacity:glowInsetRatio:opaque:)|將光柵數據轉成LED風格圖片|
 
 ### Example
+```swift
 import UIKit
 import WWTextRasterizer
 
