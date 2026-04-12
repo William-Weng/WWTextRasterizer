@@ -94,7 +94,7 @@ extension CGContext {
                 let value = pointer[srcIndex]
                 let flippedY = (height - 1) - y
                 let dstIndex = flippedY * width + x
-                pixels[dstIndex] = value >= threshold
+                pixels[dstIndex] = (value >= threshold)
             }
         }
         
