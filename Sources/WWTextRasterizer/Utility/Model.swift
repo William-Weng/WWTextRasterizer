@@ -9,43 +9,17 @@ import UIKit
 
 // MARK: - 模型
 public extension WWTextRasterizer {
-        
-    /// 句子整體被畫出來之後的黑白畫素圖 (亮 / 暗)
-    struct BitMatrix: Equatable {
-        
-        public let width: Int
-        public let height: Int
-        public var pixels: [Bool] { storage }
-        
-        private let storage: [Bool]
-        
-        init(width: Int, height: Int, pixels: [Bool]) {
-            precondition(width > 0 && height > 0)
-            precondition(pixels.count == width * height)
-            self.width = width
-            self.height = height
-            self.storage = pixels
-        }
-        
-        public subscript(x: Int, y: Int) -> Bool {
-            guard checkRange(x: x, y: y) else { return false }
-            return storage[y * width + x]
-        }
-    }
-    
-    /// 記錄單字切片訊息 => "歡" (45..<67)
-    struct GlyphSlice: Equatable {
-        
-        public let characterIndex: Int
-        public let character: Character
-        public let columnRange: Range<Int>
-    }
     
     /// 記錄句子總切片訊息
     struct RasterizedText: Equatable {
         
         public let matrix: BitMatrix
-        public let glyphSlices: [WWTextRasterizer.GlyphSlice]
+        public let glyphSlices: [GlyphSlice]
+        
+        public init(matrix: BitMatrix, glyphSlices: [GlyphSlice]) {
+            self.matrix = matrix
+            self.glyphSlices = glyphSlices
+        }
     }
     
     /// 相關設定值
@@ -74,6 +48,37 @@ public extension WWTextRasterizer {
             self.trimHorizontalEmptySpace = trimHorizontalEmptySpace
             self.characterGap = characterGap
         }
+    }
+    
+    /// 句子整體被畫出來之後的黑白畫素圖 (亮 / 暗)
+    struct BitMatrix: Equatable {
+        
+        public let width: Int
+        public let height: Int
+        public var pixels: [Bool] { storage }
+        
+        private let storage: [Bool]
+        
+        public init(width: Int, height: Int, pixels: [Bool]) {
+            precondition(width > 0 && height > 0)
+            precondition(pixels.count == width * height)
+            self.width = width
+            self.height = height
+            self.storage = pixels
+        }
+        
+        public subscript(x: Int, y: Int) -> Bool {
+            guard checkRange(x: x, y: y) else { return false }
+            return storage[y * width + x]
+        }
+    }
+    
+    /// 記錄單字切片訊息 => "歡" (45..<67)
+    struct GlyphSlice: Equatable {
+        
+        public let characterIndex: Int
+        public let character: Character
+        public let columnRange: Range<Int>
     }
 }
 
@@ -106,7 +111,7 @@ extension WWTextRasterizer.BitMatrix {
         
         var (left, right) = fitBoundary(width: width, height: height)
         
-        if (left > right) { return WWTextRasterizer.BitMatrix(width: 1, height: height, pixels: Array(repeating: false, count: height)) }
+        if (left > right) { return Self(width: 1, height: height, pixels: Array(repeating: false, count: height)) }
         
         let newWidth = right - left + 1
         var newPixels = newHorizontalPixels(from: left, width: newWidth, height: height)

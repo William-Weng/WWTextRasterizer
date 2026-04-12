@@ -11,7 +11,7 @@ https://github.com/user-attachments/assets/0cb0ed99-1c93-4756-97ec-ffd42d3959d0
 
 ```bash
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWTextRasterizer.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/William-Weng/WWTextRasterizer.git", .upToNextMajor(from: "1.1.0"))
 ]
 ```
 
@@ -20,22 +20,26 @@ dependencies: [
 |-|-|
 |convert(_:)|文字轉換成RasterizedText|
 |toImage(lightColor:darkColor:scale:)|將數據轉成圖片|
+|toLEDImage(ledOnColor:ledOffColor:backgroundColor:dotSize:dotSpacing:useRoundDots:glowOpacity:glowInsetRatio:opaque:)|將光柵數據轉成LED風格圖片|
 
 ### Example
-```swift
 import UIKit
 import WWTextRasterizer
 
 final class ViewController: UIViewController {
     
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var ledImageView: UIImageView!
     
-    @IBAction func display(_ sender: UIBarButtonItem) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        displayLED()
+    }
+    
+    func displayLED() {
         
         let config = WWTextRasterizer.Configuration(
-            font: UIFont.systemFont(ofSize: 24),
-            targetHeight: 40,
+            font: .systemFont(ofSize: 24),
+            targetHeight: 64,
             threshold: 110,
             horizontalPadding: 5,
             trimHorizontalEmptySpace: true,
@@ -43,11 +47,10 @@ final class ViewController: UIViewController {
         )
         
         let rasterizer = WWTextRasterizer(config: config)
-        let text = textField.text ?? ""
+        let text = "Hello !!!"
         let result = rasterizer.convert(text)
         
-        let image = result.matrix.toImage(scale: 4)
-        imageView.image = image
+        ledImageView.image = result.matrix.toLEDImage()
     }
 }
 ```
