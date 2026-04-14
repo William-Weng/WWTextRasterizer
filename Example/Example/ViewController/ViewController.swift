@@ -9,10 +9,9 @@ import UIKit
 import WWTextRasterizer
 
 final class ViewController: UIViewController {
+        
+    @IBOutlet weak var containerView: UIImageView!
     
-    @IBOutlet weak var ledImageView: UIImageView!
-    
-    private let containerView = UIView()
     private let imageView = UIImageView()
     private let step = 3.0
     
@@ -45,11 +44,6 @@ private extension ViewController {
         let result = rasterizer.convert(text)
         let image = result.matrix.toLEDImage()
         
-        containerView.frame = view.bounds
-        containerView.backgroundColor = .black
-        containerView.clipsToBounds = true
-        view.addSubview(containerView)
-        
         imageView.image = image
         imageView.frame = CGRect(origin: .zero, size: image.size)
         
@@ -76,4 +70,3 @@ private extension ViewController {
         if (offsetX <= -image.size.width) { offsetX = floor(containerView.bounds.width) }
     }
 }
-

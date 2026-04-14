@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,24 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uHB-ts-O4J">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ue-yg-Ph8">
                                 <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="uHB-ts-O4J" secondAttribute="trailing" id="Gt1-gn-RHy"/>
-                            <constraint firstAttribute="bottom" secondItem="uHB-ts-O4J" secondAttribute="bottom" id="PHJ-Jy-HNi"/>
-                            <constraint firstItem="uHB-ts-O4J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aFD-4I-nIY"/>
-                            <constraint firstItem="uHB-ts-O4J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="utY-TR-oti"/>
+                            <constraint firstItem="8Ue-yg-Ph8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2XP-lt-pPN"/>
+                            <constraint firstItem="8Ue-yg-Ph8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ycb-qq-JWF"/>
+                            <constraint firstAttribute="trailing" secondItem="8Ue-yg-Ph8" secondAttribute="trailing" id="ddt-Um-TlO"/>
+                            <constraint firstAttribute="bottom" secondItem="8Ue-yg-Ph8" secondAttribute="bottom" id="wVG-3m-Cj8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1DG-wb-J3u">
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="ledImageView" destination="uHB-ts-O4J" id="9TG-0F-ACw"/>
+                        <outlet property="containerView" destination="8Ue-yg-Ph8" id="78l-nM-dpj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -44,7 +45,7 @@
     </scenes>
     <resources>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

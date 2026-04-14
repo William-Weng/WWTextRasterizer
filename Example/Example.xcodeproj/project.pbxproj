@@ -11,7 +11,7 @@
 		3D1936432F8AAA7500940382 /* WWTextRasterizer in Frameworks */ = {isa = PBXBuildFile; productRef = 3D1936422F8AAA7500940382 /* WWTextRasterizer */; };
 		3D9F70EF2F8BA71F0068CFF4 /* WWTextRasterizer in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9F70EE2F8BA71F0068CFF4 /* WWTextRasterizer */; };
 		3D9F71392F8BCF210068CFF4 /* WWTextRasterizer in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9F71382F8BCF210068CFF4 /* WWTextRasterizer */; };
-		3D9F71502F8BD9760068CFF4 /* WWTextRasterizer in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9F714F2F8BD9760068CFF4 /* WWTextRasterizer */; };
+		8146A5022F8CDB300004777F /* WWTextRasterizer in Frameworks */ = {isa = PBXBuildFile; productRef = 8146A5012F8CDB300004777F /* WWTextRasterizer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D1936432F8AAA7500940382 /* WWTextRasterizer in Frameworks */,
-				3D9F71502F8BD9760068CFF4 /* WWTextRasterizer in Frameworks */,
+				8146A5022F8CDB300004777F /* WWTextRasterizer in Frameworks */,
 				3D1936232F8A93D400940382 /* WWTextRasterizer in Frameworks */,
 				3D9F71392F8BCF210068CFF4 /* WWTextRasterizer in Frameworks */,
 				3D9F70EF2F8BA71F0068CFF4 /* WWTextRasterizer in Frameworks */,
@@ -95,7 +95,7 @@
 				3D1936422F8AAA7500940382 /* WWTextRasterizer */,
 				3D9F70EE2F8BA71F0068CFF4 /* WWTextRasterizer */,
 				3D9F71382F8BCF210068CFF4 /* WWTextRasterizer */,
-				3D9F714F2F8BD9760068CFF4 /* WWTextRasterizer */,
+				8146A5012F8CDB300004777F /* WWTextRasterizer */,
 			);
 			productName = Example;
 			productReference = 3D1935F92F8A93B400940382 /* Example.app */;
@@ -126,7 +126,7 @@
 			mainGroup = 3D1935F02F8A93B400940382;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				3D9F714E2F8BD9760068CFF4 /* XCRemoteSwiftPackageReference "WWTextRasterizer" */,
+				8146A5002F8CDB300004777F /* XCLocalSwiftPackageReference "../../@WWTextRasterizer" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3D1935FA2F8A93B400940382 /* Products */;
@@ -166,7 +166,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JZA75U545P;
+				DEVELOPMENT_TEAM = 4Q5CYDAG3B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Example/Setting/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -203,7 +203,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JZA75U545P;
+				DEVELOPMENT_TEAM = 4Q5CYDAG3B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Example/Setting/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -377,16 +377,12 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		3D9F714E2F8BD9760068CFF4 /* XCRemoteSwiftPackageReference "WWTextRasterizer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/William-Weng/WWTextRasterizer";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.1.1;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		8146A5002F8CDB300004777F /* XCLocalSwiftPackageReference "../../@WWTextRasterizer" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../@WWTextRasterizer";
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		3D1936222F8A93D400940382 /* WWTextRasterizer */ = {
@@ -405,9 +401,8 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = WWTextRasterizer;
 		};
-		3D9F714F2F8BD9760068CFF4 /* WWTextRasterizer */ = {
+		8146A5012F8CDB300004777F /* WWTextRasterizer */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3D9F714E2F8BD9760068CFF4 /* XCRemoteSwiftPackageReference "WWTextRasterizer" */;
 			productName = WWTextRasterizer;
 		};
 /* End XCSwiftPackageProductDependency section */

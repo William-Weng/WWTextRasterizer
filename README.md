@@ -13,7 +13,7 @@ https://github.com/user-attachments/assets/bdc0fd12-eeee-4f2a-bc1d-cdb9583a696c
 
 ```bash
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWTextRasterizer.git", .upToNextMajor(from: "1.1.0"))
+    .package(url: "https://github.com/William-Weng/WWTextRasterizer.git", .upToNextMajor(from: "1.2.0"))
 ]
 ```
 
@@ -21,8 +21,10 @@ dependencies: [
 |函式|功能|
 |-|-|
 |convert(_:)|文字轉換成RasterizedText|
-|toImage(lightColor:darkColor:scale:)|將數據轉成圖片|
-|toLEDImage(ledOnColor:ledOffColor:backgroundColor:dotSize:dotSpacing:useRoundDots:glowOpacity:glowInsetRatio:opaque:)|將光柵數據轉成LED風格圖片|
+|toImage(lightColor:darkColor:scale:useRoundDots:)|將數據轉成圖片|
+|toLEDImage(ledColor:dot:glow:dotSize:opaque:)|將光柵數據轉成LED風格圖片|
+|renderLEDMatrixBase(columns:rows:dot:ledColor:backgroundColor:scale:opaque:)|產生LED點陣背景影像，可用於模擬電子看板的底層效果|
+|renderLEDMatrixText(columns:rows:offsetX:offsetY:ledColor:dot:glow:scale:|在LED點陣面板上渲染文字，產生電子看板效果|
 
 ### Example
 ```swift
@@ -30,10 +32,9 @@ import UIKit
 import WWTextRasterizer
 
 final class ViewController: UIViewController {
+        
+    @IBOutlet weak var containerView: UIImageView!
     
-    @IBOutlet weak var ledImageView: UIImageView!
-    
-    private let containerView = UIView()
     private let imageView = UIImageView()
     private let step = 3.0
     
@@ -66,11 +67,6 @@ private extension ViewController {
         let result = rasterizer.convert(text)
         let image = result.matrix.toLEDImage()
         
-        containerView.frame = view.bounds
-        containerView.backgroundColor = .black
-        containerView.clipsToBounds = true
-        view.addSubview(containerView)
-        
         imageView.image = image
         imageView.frame = CGRect(origin: .zero, size: image.size)
         
@@ -97,4 +93,5 @@ private extension ViewController {
         if (offsetX <= -image.size.width) { offsetX = floor(containerView.bounds.width) }
     }
 }
+
 ```
